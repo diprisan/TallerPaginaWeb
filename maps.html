@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+       html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map, #pano {
+        float: left;
+        height: 100%;
+        width: 45%;
+      }
+    </style>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYIUcBjvtK-h0Wa5IhCHumTaAA_lErH8s&libraries=places&callback=initialize"
+     async defer></script>
+     <script src="fuccion.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="pano"></div>
+
+  </body>
+</html>
