@@ -9,177 +9,11 @@
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <title>Taller 5 - Tecnolog�a Web</title>
-    <style type="text/css">
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0
-        }
-        
-        div {
-            position: absolute;
-            padding: 1em;
-            border: 1px solid #000
-        }
-    </style>
-
-
-    <style type="text/css">
-        #button {
-            padding: 0;
-        }
-        
-        #button li {
-            display: inline;
-        }
-        
-        #button li a {
-            font-family: Arial;
-            font-size: 11px;
-            text-decoration: none;
-            float: left;
-            padding: 10px;
-            background-color: #2175bc;
-            color: #fff;
-        }
-        
-        #button li a:hover {
-            background-color: #2586d7;
-            margin-top: -2px;
-            padding-bottom: 12px;
-        }
-    </style>
-
-
-    <script type="text/javascript">
-        function dibujar() {
-
-
-            var ctx = document.getElementById('nuestroCanvas');
-            var contenido = ctx.getContext('2d');
-            var imagenGrafica = new Image();
-            imagenGrafica.src = 'grafica.png';
-            imagenGrafica.onload = function() {
-
-                //Cargo la imagen en la posici�n
-
-                contenido.drawImage(imagenGrafica, 0, 0, 720, 360);
-
-
-                //Indicar el grosor de la l�nea
-
-                contenido.lineWidth = 4;
-
-                //Dibujo las l�neas para simular la gr�fica
-
-                contenido.beginPath();
-
-
-                contenido.moveTo(16, 156);
-
-                contenido.lineTo(77, 66);
-
-                contenido.lineTo(135, 100);
-
-                contenido.lineTo(194, 200);
-
-                contenido.lineTo(255, 185);
-
-                contenido.lineTo(316, 195);
-
-                contenido.lineTo(376, 155);
-
-                contenido.lineTo(436, 185);
-
-
-                contenido.strokeStyle = "hsla(333, 71%, 53%, 1)";
-
-                contenido.stroke();
-
-
-                //Indicar el grosor de la l�nea
-
-                contenido.lineWidth = 1;
-
-                //Dibujo las l�neas para simular la gr�fica
-
-                contenido.beginPath();
-
-
-                contenido.moveTo(16, 126);
-
-                contenido.lineTo(77, 176);
-
-                contenido.lineTo(135, 160);
-
-
-                contenido.lineTo(194, 100);
-
-                contenido.lineTo(255, 155);
-
-                contenido.lineTo(316, 225);
-
-                contenido.lineTo(376, 85);
-
-                contenido.lineTo(436, 185);
-
-
-                contenido.strokeStyle = "hsla(120, 100%, 50%, 1)";
-
-                contenido.stroke();
-
-
-
-
-            }
-
-        }
-    </script>
-
-    <script type="text/javascript">
-        function line() {
-
-            var canvas = document.getElementById('canvasGlowing');
-            var context = canvas.getContext('2d');
-
-            var lastX = context.canvas.width * Math.random();
-            var lastY = context.canvas.height * Math.random();
-            var hue = 0;
-
-            context.save();
-            context.translate(context.canvas.width / 2, context.canvas.height / 2);
-            context.scale(0.9, 0.9);
-            context.translate(-context.canvas.width / 2, -context.canvas.height / 2);
-            context.beginPath();
-            context.lineWidth = 5 + Math.random() * 10;
-            context.moveTo(lastX, lastY);
-            lastX = context.canvas.width * Math.random();
-            lastY = context.canvas.height * Math.random();
-            context.bezierCurveTo(context.canvas.width * Math.random(),
-                context.canvas.height * Math.random(),
-                context.canvas.width * Math.random(),
-                context.canvas.height * Math.random(),
-                lastX, lastY);
-
-            hue = hue + 10 * Math.random();
-            context.strokeStyle = 'hsl(' + hue + ', 50%, 50%)';
-            context.shadowColor = 'white';
-            context.shadowBlur = 10;
-            context.stroke();
-            context.restore();
-        }
-        setInterval(line, 50);
-
-        function blank() {
-            context.fillStyle = 'rgba(0,0,0,0.1)';
-            context.fillRect(0, 0, context.canvas.width, context.canvas.height);
-        }
-        setInterval(blank, 40);
-    </script>
-
-    <body onload="dibujar()">
+       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYIUcBjvtK-h0Wa5IhCHumTaAA_lErH8s&libraries=places&callback=initialize"
+       async defer></script>
+       <script src="fuccion.js"></script>
+    </head>
+    <!--<body onload="dibujar()">-->
         <ul id="button">
             <li><a href="#">Home</a></li>
             <li><a href="#">Video</a></li>
@@ -193,10 +27,11 @@
         <br />
         <br />
         <br />
+        <div id="map"></div>
+        <div id="pano"></div>
+        <!--<section>
 
-        <section>
-
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15947.701661000881!2d-79.880958!3d-2.1819983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1521298032716" width="720" height="360" frameborder="0" style="border:0" allowfullscreen></iframe>
+            
 
             <video src="VID-20170423-WA0028.mp4" type="video/mp4" width="720" height="360" controls> Tu navegador no implementa el elemento <code>video</code>.</video>
         </section>
@@ -209,7 +44,7 @@
 
 
 
-        </section>
+        </section>-->
 
     </body>
 
