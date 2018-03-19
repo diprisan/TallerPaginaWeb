@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Helados Topsy</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+   
+    <script type="text/javascript" src="scripts/swfobject/swfobject.js"></script>
+    <script type="text/javascript">
+        var flashvars = {};
+        flashvars.cssSource = "css/piecemaker.css";
+        flashvars.xmlSource = "piecemaker.xml";
+
+        var params = {};
+        params.play = "true";
+        params.menu = "false";
+        params.scale = "showall";
+        params.wmode = "transparent";
+        params.allowfullscreen = "true";
+        params.allowscriptaccess = "always";
+        params.allownetworking = "all";
+
+        swfobject.embedSWF('piecemaker.swf', 'piecemaker', '960', '500', '10', null, flashvars,
+            params, null);
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+
+    <script type="text/javascript" src="scripts/jquery.min.js"></script>
+
+
+    <script type="text/javascript">
+        ddsmoothmenu.init({
+            mainmenuid: "templatemo_menu", //menu DIV id
+            orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+            classname: 'ddsmoothmenu', //class added to menu's outer DIV
+            //customtheme: ["#1c5a80", "#18374a"],
+            contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+        })
+    </script>
+	
+	 <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYIUcBjvtK-h0Wa5IhCHumTaAA_lErH8s&callback=initMap">
+    </script>      
+     <script type="text/javascript">
+        function dibujar() {
+
+
+            var ctx = document.getElementById('nuestroCanvas');
+            var contenido = ctx.getContext('2d');
+            var imagenGrafica = new Image();
+            imagenGrafica.src = 'grafica.png';
+            imagenGrafica.onload = function() {
+
+                //Cargo la imagen en la posici�n
+
+                contenido.drawImage(imagenGrafica, 0, 0, 720, 360);
+
+
+                //Indicar el grosor de la l�nea
+
+                contenido.lineWidth = 4;
+
+                //Dibujo las l�neas para simular la gr�fica
+
+                contenido.beginPath();
+
+
+                contenido.moveTo(16, 156);
+
+                contenido.lineTo(77, 66);
+
+                contenido.lineTo(135, 100);
+
+                contenido.lineTo(194, 200);
+
+                contenido.lineTo(255, 185);
+
+                contenido.lineTo(316, 195);
+
+                contenido.lineTo(376, 155);
+
+                contenido.lineTo(436, 185);
+
+
+                contenido.strokeStyle = "hsla(333, 71%, 53%, 1)";
+
+                contenido.stroke();
+
+
+                //Indicar el grosor de la l�nea
+
+                contenido.lineWidth = 1;
+
+                //Dibujo las l�neas para simular la gr�fica
+
+                contenido.beginPath();
+
+
+                contenido.moveTo(16, 126);
+
+                contenido.lineTo(77, 176);
+
+                contenido.lineTo(135, 160);
+
+
+                contenido.lineTo(194, 100);
+
+                contenido.lineTo(255, 155);
+
+                contenido.lineTo(316, 225);
+
+                contenido.lineTo(376, 85);
+
+                contenido.lineTo(436, 185);
+
+
+                contenido.strokeStyle = "hsla(120, 100%, 50%, 1)";
+
+                contenido.stroke();
+
+
+
+
+            }
+
+        }
+    </script>
+
+    <script type="text/javascript">
+        function line() {
+
+            var canvas = document.getElementById('canvasGlowing');
+            var context = canvas.getContext('2d');
+
+            var lastX = context.canvas.width * Math.random();
+            var lastY = context.canvas.height * Math.random();
+            var hue = 0;
+
+            context.save();
+            context.translate(context.canvas.width / 2, context.canvas.height / 2);
+            context.scale(0.9, 0.9);
+            context.translate(-context.canvas.width / 2, -context.canvas.height / 2);
+            context.beginPath();
+            context.lineWidth = 5 + Math.random() * 10;
+            context.moveTo(lastX, lastY);
+            lastX = context.canvas.width * Math.random();
+            lastY = context.canvas.height * Math.random();
+            context.bezierCurveTo(context.canvas.width * Math.random(),
+                context.canvas.height * Math.random(),
+                context.canvas.width * Math.random(),
+                context.canvas.height * Math.random(),
+                lastX, lastY);
+
+            hue = hue + 10 * Math.random();
+            context.strokeStyle = 'hsl(' + hue + ', 50%, 50%)';
+            context.shadowColor = 'white';
+            context.shadowBlur = 10;
+            context.stroke();
+            context.restore();
+        }
+        setInterval(line, 50);
+
+        function blank() {
+            context.fillStyle = 'rgba(0,0,0,0.1)';
+            context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+        }
+        setInterval(blank, 40);
+    </script>
+
+</head>
+
+<body onload="dibujar()">
+    <div id="templatemo_wrapper">
+
+        <div id="templatemo_header">
+
+            <div id="site_title">
+                <h1><a href="#">Free CSS Templates</a></h1>
+            </div>
+
+            <div id="templatemo_menu" class="ddsmoothmenu">
+                Bienvenido Usuario
+                <br style="clear: left" />
+            </div>
+            <!-- end of templatemo_menu -->
+
+        </div>
+        <!-- end of header -->
+
+   </div>
+   <div align="center" style="margin:0 0 0 300px">
+     <table align="center">
+          <tr>
+		   <td id="map" width="250" height="180">
+   		     hola
+		   </td>
+            <td>
+      
+            <video src="VID-20170423-WA0028.mp4" type="video/mp4" width="80%" height="450px" controls> Tu navegador no implementa el elemento <code>video</code>.</video>
+       
+		 </td>
+		 </tr>
+		 <tr> 
+		  <td> <canvas id="canvasGlowing" width="360" height="360"></canvas> </td>
+		  <td> <canvas id="nuestroCanvas" width="550" height="450"></canvas></td>
+		 </tr>
+		</table>  
+      </div>
+    
+
+  
+</body>
+
+</html>

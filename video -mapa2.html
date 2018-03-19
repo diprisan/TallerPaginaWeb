@@ -2,37 +2,35 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-    <title>Taller 5 - Tecnolog�a Web</title>
-       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYIUcBjvtK-h0Wa5IhCHumTaAA_lErH8s&libraries=places&callback=initialize"
-       async defer></script>
-       <script src="fuccion.js"></script>
+ <style>
+      #map {
+        height: 450px;
+        width: 30%;
+       }
+    </style>
+        
     </head>
-    <!--<body onload="dibujar()">-->
-        <ul id="button">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Video</a></li>
-            <li><a href="#">Audio</a></li>
-            <li><a href="#">Mapas</a></li>
-            <li><a href="#">Graficos</a></li>
-
-        </ul>
-        </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <div id="map"></div>
-        <div id="pano"></div>
-        <!--<section>
+	<body>
+     
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYIUcBjvtK-h0Wa5IhCHumTaAA_lErH8s&callback=initMap">
+    </script>      
 
             
-
+    <!--     <section>
             <video src="VID-20170423-WA0028.mp4" type="video/mp4" width="720" height="360" controls> Tu navegador no implementa el elemento <code>video</code>.</video>
         </section>
         <section>
@@ -44,8 +42,20 @@
 
 
 
-        </section>-->
-
+        </section> -->
+		<table>
+          <tr>
+		   <td id="map">
+   		    
+		   </td>
+            <td>
+      
+            <video src="VID-20170423-WA0028.mp4" type="video/mp4" width="30%" height="450px" controls> Tu navegador no implementa el elemento <code>video</code>.</video>
+       
+		 </td>
+		 </tr>
+		 
+		</table>
     </body>
 
 </html>
