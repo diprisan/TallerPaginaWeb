@@ -29,7 +29,8 @@
 
     <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
 
-    <script type="text/javascript" src="scripts/jquery.min.js"></script>
+     <script type="text/javascript" src="scripts/jquery.min.js"></script>
+	 <script type="text/javascript" src="fuccion.js"></script>
 
 
     <script type="text/javascript">
@@ -42,22 +43,12 @@
         })
     </script>
 	
-	 <script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
+	 
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYIUcBjvtK-h0Wa5IhCHumTaAA_lErH8s&libraries=places&callback=initialize"
+     async defer></script>
+	<!--<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYIUcBjvtK-h0Wa5IhCHumTaAA_lErH8s&callback=initMap">
-    </script>      
+    </script>      -->
      <script type="text/javascript">
         function dibujar() {
 
@@ -208,13 +199,13 @@
    <div align="center" style="margin:0 0 0 300px">
      <table align="center">
           <tr>
-		   <td id="map" width="250" height="180">
-   		     hola
+		   <td id="map" width="350" height="280">
+   		     hola s
 		   </td>
-            <td>
-      
+            <td id="pano">
+            <!--
             <video src="VID-20170423-WA0028.mp4" type="video/mp4" width="80%" height="450px" controls> Tu navegador no implementa el elemento <code>video</code>.</video>
-       
+            -->
 		 </td>
 		 </tr>
 		 <tr> 
